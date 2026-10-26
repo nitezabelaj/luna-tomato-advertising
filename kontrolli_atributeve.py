@@ -1,0 +1,22 @@
+from esa_code.lta_udp import udp
+
+print("message:", repr(udp.message))
+print("synodic_period:", round(udp.synodic_period, 4))
+print("width:", round(udp.width, 4))
+print("dot/width:", round(udp.dot / udp.width, 4))
+print("dash/width:", round(udp.dash / udp.width, 4))
+print("gap/width:", round(udp.gap / udp.width, 4))
+print("letter_gap/width:", round(udp.letter_gap / udp.width, 4))
+print("word_gap/width:", round(udp.word_gap / udp.width, 4))
+print("num_dro:", udp.num_dro)
+print("num_lyap:", udp.num_lyap)
+print("num_axial:", udp.num_axial)
+print("max_per_orbit:", udp.max_per_orbit)
+print("rreshta db_dro:", len(udp.db_dro))
+print("rreshta db_lyap:", len(udp.db_lyap))
+print("rreshta db_axial:", len(udp.db_axial))
+print("mostra te t:", len(udp.t))
+
+t, s = udp.morse_to_signal(udp.message)
+print("morse_string:", udp.message_to_morse_string(udp.message))
+print("target: mostra", len(t), "| pika 1:", int((s > 0.5).sum()))
