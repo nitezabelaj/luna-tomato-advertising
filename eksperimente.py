@@ -19,3 +19,16 @@ TWO_PI = 2 * np.pi
 WIN = int(round(udp.width / dt))
 CACHE = "kandidatet_fp0.npz"
 EMRAT = {0: "DRO", 1: "Lyapunov", 2: "Axial"}
+pulses, i = [], 0
+while i < len(target):
+    if target[i]:
+        j = i
+        while j < len(target) and target[j]:
+            j += 1
+        pulses.append((i, j))
+        i = j
+    else:
+        i += 1
+tiles = [s for a, b in pulses for s in range(a, b, WIN)]
+c_nd = np.array([(s + (WIN - 1) / 2) * dt * 24 * 3600 / udp.TU for s in tiles])
+
