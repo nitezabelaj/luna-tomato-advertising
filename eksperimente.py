@@ -83,4 +83,28 @@ else:
 for fm in (0, 1, 2):
     print("Kandidate", EMRAT[fm], ":", int((fam == fm).sum()))
 
+#--- Algoritmet----
+POP = np.array([bin(k).count("1") for k in range(256)], dtype=np.uint8)
+
+
+def pop(a):
+    return int(POP[a].sum(dtype=np.int64))
+
+
+def lakmitare(o, Q, stop_err):
+    """Zgjedh kandidatin qe mbulon me shume pika te reja, derisa gabimet <= stop_err."""
+    covered = np.zeros(Q.shape[1], np.uint8)
+    cnt = np.zeros(N, int)
+    chosen = []
+    while NT - pop(covered) > stop_err:
+        gain = POP[Q & ~covered[None, :]].sum(axis=1, dtype=np.int32)
+        gain[cnt[o] >= M] = 0
+        k = int(np.argmax(gain))
+        if gain[k] == 0:
+            break
+        chosen.append(k)
+        covered |= Q[k]
+        cnt[o[k]] += 1
+    return chosen
+
 
