@@ -1,0 +1,9 @@
+name: luna
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - heyoka.py
+  - numpy
+  - matplotlib
+  - pygmo
