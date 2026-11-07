@@ -20,3 +20,8 @@ print("mostra te t:", len(udp.t))
 t, s = udp.morse_to_signal(udp.message)
 print("morse_string:", udp.message_to_morse_string(udp.message))
 print("target: mostra", len(t), "| pika 1:", int((s > 0.5).sum()))
+import numpy as np
+
+print()
+for emri, db in (("DRO", udp.db_dro), ("Lyapunov", udp.db_lyap), ("Axial", udp.db_axial)):
+    period_rad = db[:, 6]
