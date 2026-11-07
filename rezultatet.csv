@@ -1,0 +1,9 @@
+eksperimenti,familjet,max_err,kandidate,anije,mse,e_vlefshme,koha_lakmitare_s,koha_pastrim_s
+E1,DRO+Lyapunov+Axial,0,74611,57,0.0,True,5.6,0.0
+E1,DRO+Lyapunov+Axial,60,74611,40,0.0199,True,4.2,0.0
+E1,DRO+Lyapunov+Axial,120,74611,34,0.0443,True,3.6,0.0
+E1,DRO+Lyapunov+Axial,135,74611,33,0.0498,True,3.5,0.0
+E2,DRO,120,978,57,0.0428,True,0.1,0.0
+E2,Lyapunov,120,53870,36,0.0402,True,2.5,0.0
+E2,Axial,120,19763,50,0.0432,True,1.5,0.0
+E2,DRO+Lyapunov,120,54848,34,0.0443,True,2.5,0.0
